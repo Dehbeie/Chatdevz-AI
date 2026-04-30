@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "title": "General Advisor",
+    "description": "Watch your requests get created in real-time...",
+    "icon": "User",
+    "status": "active"
+  },
+  {
+    "id": 2,
+    "title": "Sales Advisor",
+    "description": "Boost your digital sales with strategies...",
+    "icon": "ShoppingCart",
+    "status": "disabled"
+  },
+  {
+    "id": 3,
+    "title": "Negotiation Expert (Updated)",
+    "description": "Updated description here",
+    "icon": "Handshake",
+    "status": "active"
+  },
+  {
+    "id": 4,
+    "title": "Marketing Guru",
+    "description": "Elevate your marketing with campaigns...",
+    "icon": "Megaphone",
+    "status": "active"
+  },
+  {
+    "title": "AI Assistant",
+    "description": "Helps you automate tasks",
+    "icon": "Robot",
+    "status": "active",
+    "id": 1768808656771
+  }
+]
