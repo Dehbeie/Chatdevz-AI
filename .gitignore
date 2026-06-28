@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Nuxt
+.nuxt/
+.output/
+
+# Build
+dist/
+
+# Environment files
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Cache
+.cache/
+
+# Operating system
+.DS_Store
+Thumbs.db

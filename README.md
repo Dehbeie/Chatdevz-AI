@@ -1,149 +1,182 @@
 # ChatDev AI Commerce Agent
 
-An AI-powered commerce agent that helps businesses sell, support customers, and automate operations through natural conversation.
+> **An AI employee that helps businesses sell products, support customers, process orders, guide payments, and automate operations—24/7.**
 
-## Overview
-
-ChatDev is a production-oriented AI commerce agent designed to automate customer interactions from enquiry to order completion.
-
-Instead of acting as a simple chatbot, ChatDev combines business knowledge, REST APIs, workflow automation, and payment integration to support real business operations.
+<p align="center">
+  <img src="assets/hero.png" alt="ChatDev AI Commerce Agent" width="100%">
+</p>
 
 ---
 
-## Business Problem
+## The Problem
 
-Many small businesses lose sales because:
+Small businesses rarely lose customers because they have bad products.
 
-* Customer enquiries are answered too late.
-* Product recommendations are manual.
-* Order processing is repetitive.
-* Payment instructions require human intervention.
-* Business owners cannot stay available 24/7.
+They lose them because they can't respond fast enough.
 
----
+A customer sends a message while the owner is busy.
 
-## Solution
+Another wants to compare products.
 
-ChatDev automates the customer buying journey.
+Someone else needs payment instructions.
 
-Customers can:
+Another customer is waiting for an order update.
 
-* Ask business-related questions.
-* Browse products.
-* Receive AI-powered product recommendations.
-* View product images.
-* Place orders.
-* Receive payment guidance.
-* Track existing orders.
+By the time the business owner replies, the customer has already moved on.
 
----
+## The Solution
 
-## Key Features
+ChatDev acts as an AI commerce employee.
 
-### AI Customer Support
+Instead of functioning as a simple chatbot, it understands the business, answers customer questions, recommends products, receives orders, guides customers through payment, and helps customers track their purchases—all through natural conversation.
 
-* Business knowledge retrieval
-* Context-aware conversations
-* Product enquiries
+The goal is simple:
 
-### Product Recommendation
-
-* Intelligent recommendations
-* Multiple product rendering
-* Product image display
-
-### Order Processing
-
-* Order capture
-* Order confirmation
-* Order tracking
-
-### Workflow Automation
-
-* n8n workflow orchestration
-* REST API integrations
-* Backend automation
+* Respond instantly.
+* Reduce repetitive work.
+* Improve customer experience.
+* Help businesses sell more.
 
 ---
 
-## Tech Stack
+# Product Walkthrough
 
-**Frontend**
+<p align="center">
+  <img src="assets/product-screenshots.png" alt="Product Walkthrough" width="100%">
+</p>
 
-* Nuxt.js
-* Vue.js
+### AI Conversation
+
+* Understands customer intent
+* Maintains conversational context
+* Answers business questions naturally
+
+### Product Recommendations
+
+* Displays products with images
+* Shows prices and descriptions
+* Recommends relevant products
+
+### Payment Guidance
+
+* Guides customers through payment
+* Integrates payment workflows
+* Confirms successful transactions
+
+### Order Tracking
+
+* Retrieves customer orders
+* Displays delivery status
+* Keeps customers informed
+
+---
+
+# System Architecture
+
+<p align="center">
+  <img src="assets/architecture.png" alt="Architecture Diagram" width="100%">
+</p>
+
+ChatDev combines conversational AI, business knowledge, workflow automation, and backend services into a single commerce platform.
+
+Customer requests flow through the frontend into the AI conversation layer, which retrieves business knowledge, communicates with backend APIs, triggers workflow automation, and returns contextual responses in real time.
+
+---
+
+# Key Features
+
+✅ AI-powered customer conversations
+
+✅ Product recommendations
+
+✅ Business knowledge retrieval
+
+✅ Order processing
+
+✅ Payment guidance
+
+✅ Order tracking
+
+✅ Workflow automation with n8n
+
+✅ REST API integrations
+
+✅ PocketBase backend
+
+---
+
+# Technology Stack
+
+### Frontend
+
+* Nuxt 3
+* Vue 3
+* TypeScript
 * Tailwind CSS
 
-**Backend**
+### Backend
 
-* Node.js
 * PocketBase
 * REST APIs
+* Node.js
 
-**Automation**
+### AI & Automation
 
 * n8n
-* Webhooks
+* Large Language Models (LLMs)
+* Prompt Engineering
+* Business Knowledge Retrieval
 
 ---
 
-## Project Architecture
+# Development Journey
 
-Customer
+ChatDev wasn't built in a weekend.
 
-↓
+The project has evolved through continuous user testing, product validation, and iterative improvements.
 
-Nuxt Frontend
+Recent improvements include:
 
-↓
+* Improved multi-product rendering
+* Better shopping experience
+* Refined AI conversations
+* Enhanced payment workflow
+* Cleaner product recommendations
+* UI improvements based on real user feedback
 
-AI Agent
-
-↓
-
-Business Knowledge
-
-↓
-
-REST APIs
-
-↓
-
-PocketBase Database
-
-↓
-
-n8n Automation
-
-↓
-
-Business Response
+Every improvement is driven by real customer behaviour rather than assumptions.
 
 ---
 
-## Lessons Learned
+# Documentation
 
-One of the biggest lessons from building ChatDev came from testing with real users.
+Project documentation is available in the `/docs` directory.
 
-Although the AI generated accurate responses, the experience of browsing multiple recommended products felt disconnected.
-
-User feedback led to redesigning the product rendering experience, making it easier for customers to compare products naturally and improving the overall buying experience.
+* System Architecture
+* API Overview
+* Roadmap
+* Changelog
 
 ---
 
-## Future Improvements
+# Future Improvements
 
 * WhatsApp integration
 * Voice AI
+* CRM integrations
 * RAG implementation
-* CRM integration
-* Analytics dashboard
+* Vector database support
 * Multi-business support
+* Analytics dashboard
 
 ---
 
-## Author
+# Author
 
-Deborah Oluomachukwu Onyealilam
+**Deborah Onyealilam**
 
-AI Agent Developer | Full-Stack Developer | Workflow Automation Engineer
+Full-Stack Developer • AI Agent Developer • Product Validation & Scope Strategist
+
+Building AI employees that help businesses sell, support customers, and automate operations.
+
+If you found this project interesting, feel free to connect or contribute.
