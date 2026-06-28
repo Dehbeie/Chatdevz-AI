@@ -39,7 +39,7 @@ interface Product {
 
 const products = ref<Product[]>([])
 
-// 1️⃣ Create a separate function to fetch products
+// Create a separate function to fetch products
 const fetchProducts = async () => {
   try {
     const records = await pb.collection('products').getFullList()
@@ -58,7 +58,7 @@ const fetchProducts = async () => {
   }
 }
 
-// 2️⃣ Call the function inside onMounted
+// Call the function inside onMounted
 onMounted(() => {
   fetchProducts()
 })

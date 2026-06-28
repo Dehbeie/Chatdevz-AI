@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@paystack/inline-js": "^2.22.2",
     "dotenv": "^17.2.3",
     "lucide-vue-next": "^0.555.0",
     "nuxt": "^4.2.1",

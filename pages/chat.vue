@@ -32,7 +32,22 @@
                     <div :class="msg.type === 'user'
                         ? 'ml-auto bg-indigo-600 text-white'
                         : 'mr-auto bg-indigo-300 text-gray-900'" class="max-w-[70%] p-3 rounded-lg">
-                        {{ msg.text }}
+                        <p>{{ msg.text }}</p>
+
+                        <div v-if="msg.products && msg.products.length" class="mt-4 bg-white rounded-xl p-3 shadow-md">
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+
+                                <div v-for="product in msg.products" :key="product.id" class="overflow-hidden">
+                                    <img :src="product.image" :alt="product.title"
+                                        class="w-full h-40 object-cover rounded-lg" />
+
+                                    <p class="text-xs text-gray-700 mt-1">
+                                        {{ product.title }}
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -93,22 +108,33 @@ FAQ:
 `;
 
 // n8n webhook URL
-const webhookUrl = 'http://localhost:5678/webhook/chatdevz-agent';
+const webhookUrl = 'http://localhost:5678/webhook/chatdevz';
 
 
 
 // Send message
+const sessionId = crypto.randomUUID()
+
 const sendMessage = async () => {
+
     const text = chatInput.value.trim()
+
     if (!text) return
 
-    messages.value.push({ type: 'user', text })
+    messages.value.push({
+        type: 'user',
+        text
+    })
+
     chatInput.value = ''
 
     await nextTick()
-    chatWindow.value.scrollTop = chatWindow.value.scrollHeight
+
+    chatWindow.value.scrollTop =
+        chatWindow.value.scrollHeight
 
     try {
+
         const response = await fetch(webhookUrl, {
             method: 'POST',
             headers: {
@@ -117,34 +143,58 @@ const sendMessage = async () => {
             body: JSON.stringify({
                 business_id: "Closette",
                 userId: "test-user-001",
+                email: "testcustomer@example.com",
                 message: text,
-                sessionId: "session-001"
+                sessionId
             })
         })
 
-        const result = await response.text()
-        console.log("RAW RESPONSE:", result)
+        const raw = await response.text()
 
-        if (!result) {
-            throw new Error("Empty response from webhook")
+        if (!raw || raw.trim() === '') {
+            throw new Error('Empty response')
         }
 
-        const data = JSON.parse(result)
+        const data = JSON.parse(raw)
+
+
+        console.log("Parsed response:", data)
+        console.log("Is array?", Array.isArray(data))
 
         messages.value.push({
             type: 'ai',
-            text: data.message || data.message_reply || result || "No response from AI"
+            text: data.message || 'No response',
+            action: data.action,
+            show_visual: data.show_visual,
+            products: data.products || []
         })
 
+        if (data.payment_url) {
+
+            messages.value.push({
+                type: 'ai',
+                text: 'Redirecting to payment...'
+            })
+
+            setTimeout(() => {
+                window.location.href = data.payment_url
+            }, 1500)
+        }
+
         await nextTick()
-        chatWindow.value.scrollTop = chatWindow.value.scrollHeight
+
+        chatWindow.value.scrollTop =
+            chatWindow.value.scrollHeight
 
     } catch (err) {
+
         console.error("ERROR:", err)
+
+
         messages.value.push({
             type: 'ai',
             text: 'Error connecting to AI'
         })
     }
-}
+} 
 </script>
