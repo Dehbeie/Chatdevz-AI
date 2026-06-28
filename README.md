@@ -8,6 +8,20 @@
 
 ---
 
+## Product Demo
+
+Watch ChatDev automate:
+
+- Customer enquiries
+- Product recommendations
+- Order processing
+- Payment guidance
+- Order tracking
+
+Watch Chatdev in action: https://youtu.be/p9VUHjJlMRE
+
+---
+
 ## The Problem
 
 Small businesses rarely lose customers because they have bad products.
